@@ -1,0 +1,5 @@
+{
+  "name": "Arka Solar Energy",
+  "description": "Premium Solar EPC Company in Chennai providing end-to-end solar solutions for residential, commercial, and industrial clients.",
+  "requestFramePermissions": ["geolocation"]
+}
