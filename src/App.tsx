@@ -32,6 +32,30 @@ function AppContent() {
   const location = useLocation();
   const seo = getSeoForPath(location.pathname);
 
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -10% 0px' }
+    );
+
+    const sections = Array.from(document.querySelectorAll('main section'));
+    sections.forEach(section => {
+      section.classList.add('reveal');
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, [location.pathname]);
+
   return (
     <>
       <SEOHead title={seo.title} tags={seo.tags} links={seo.links} jsonLd={seo.jsonLd} />
