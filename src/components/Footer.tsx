@@ -93,7 +93,7 @@ export default function Footer() {
                   onClick={(e) => {
                     e.preventDefault();
                     fireContactEvent('email');
-                    window.location.href = `mailto:${encodeURIComponent(CONTACT_INFO.email)}`;
+                    window.location.href = `mailto:${CONTACT_INFO.email}`;
                   }}
                   className="flex items-center gap-3 text-sm text-white/70 hover:text-sun-yellow transition-colors"
                 >

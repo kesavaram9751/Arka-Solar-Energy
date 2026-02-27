@@ -2,12 +2,22 @@ import React from 'react';
 import { CheckCircle2, Zap, Building2, Factory, Home, Wrench, ClipboardCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SERVICES } from '../constants';
+import serviceImage2 from '../assets/image2.jpg';
+import serviceImage3 from '../assets/image3.jpg';
+import serviceImage4 from '../assets/image4.jpg';
+import serviceImage5 from '../assets/image5.jpg';
 
 const ICON_MAP: Record<string, any> = {
   Home: Home,
   Factory: Factory,
   Building2: Building2,
   Wrench: Wrench
+};
+const SERVICE_IMAGES: Record<string, string> = {
+  residential: serviceImage4,
+  commercial: serviceImage3,
+  apartment: serviceImage2,
+  om: serviceImage5
 };
 
 export default function Services() {
@@ -36,7 +46,7 @@ export default function Services() {
                   <div className="relative">
                     <div className="absolute -inset-4 bg-solar-red/5 rounded-[2.5rem] rotate-3"></div>
                     <img
-                      src={`https://picsum.photos/seed/service-${service.id}/800/600`}
+                      src={SERVICE_IMAGES[service.id] ?? `https://picsum.photos/seed/service-${service.id}/800/600`}
                       alt={service.title}
                       className="relative z-10 rounded-[2rem] shadow-xl object-cover w-full h-[400px]"
                       referrerPolicy="no-referrer"

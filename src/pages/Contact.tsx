@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Instagram, Facebook, Youtube, MessageCircle, Send, ChevronDown } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Facebook, MessageCircle, Send, ChevronDown } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
 
 export default function Contact() {
@@ -77,7 +77,7 @@ export default function Contact() {
                         required
                         type="text"
                         placeholder="John Doe"
-                        className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
+                        className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
                         value={formData.name}
                         onChange={e => setFormData({...formData, name: e.target.value})}
                       />
@@ -88,7 +88,7 @@ export default function Contact() {
                         required
                         type="tel"
                         placeholder="+91 98765 43210"
-                        className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
+                        className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
                         value={formData.phone}
                         onChange={e => setFormData({...formData, phone: e.target.value})}
                       />
@@ -99,7 +99,7 @@ export default function Contact() {
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-wider text-panel-navy/60">Property Type*</label>
                       <select
-                        className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all appearance-none"
+                        className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all appearance-none"
                         value={formData.propertyType}
                         onChange={e => setFormData({...formData, propertyType: e.target.value})}
                       >
@@ -112,7 +112,7 @@ export default function Contact() {
                     <div className="space-y-2">
                       <label className="text-xs font-bold uppercase tracking-wider text-panel-navy/60">Monthly Bill*</label>
                       <select
-                        className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all appearance-none"
+                        className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all appearance-none"
                         value={formData.billRange}
                         onChange={e => setFormData({...formData, billRange: e.target.value})}
                       >
@@ -130,7 +130,7 @@ export default function Contact() {
                       required
                       type="text"
                       placeholder="e.g. Anna Nagar, 600040"
-                      className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
+                      className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
                       value={formData.area}
                       onChange={e => setFormData({...formData, area: e.target.value})}
                     />
@@ -141,7 +141,7 @@ export default function Contact() {
                     <textarea
                       rows={4}
                       placeholder="Tell us about your roof or energy needs..."
-                      className="w-full px-5 py-4 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all resize-none"
+                      className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all resize-none"
                       value={formData.message}
                       onChange={e => setFormData({...formData, message: e.target.value})}
                     ></textarea>
@@ -169,7 +169,7 @@ export default function Contact() {
                   {[
                     { icon: MapPin, title: "Office Address", val: CONTACT_INFO.address, href: mapUrl, type: 'location', external: true },
                     { icon: Phone, title: "Phone Number", val: CONTACT_INFO.phone, href: `tel:${CONTACT_INFO.phone}`, type: 'phone' },
-                    { icon: Mail, title: "Email Address", val: CONTACT_INFO.email, href: `mailto:${encodeURIComponent(CONTACT_INFO.email)}`, type: 'email' },
+                    { icon: Mail, title: "Email Address", val: CONTACT_INFO.email, href: `mailto:${CONTACT_INFO.email}`, type: 'email' },
                     { icon: MessageCircle, title: "WhatsApp", val: CONTACT_INFO.whatsapp, href: whatsappUrl, type: 'whatsapp', external: true }
                   ].map((item, i) => (
                     <a
@@ -193,29 +193,24 @@ export default function Contact() {
               <div className="space-y-8">
                 <h2 className="text-3xl font-bold text-panel-navy">Follow Our Journey</h2>
                 <div className="flex gap-4">
-                  {[Instagram, Facebook, Youtube].map((Icon, i) => (
-                    <a key={i} href="#" className="w-14 h-14 bg-panel-navy text-white rounded-2xl flex items-center justify-center hover:bg-solar-red transition-all shadow-lg">
-                      <Icon size={24} />
+                  {[
+                    { icon: Instagram, href: 'https://www.instagram.com/arkasolar.energy/', label: 'Instagram' },
+                    { icon: Facebook, href: 'https://www.facebook.com/arkasolarenergy.in', label: 'Facebook' }
+                  ].map((item, i) => (
+                    <a
+                      key={i}
+                      href={item.href}
+                      aria-label={item.label}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-14 h-14 bg-panel-navy text-white rounded-2xl flex items-center justify-center hover:bg-solar-red transition-all shadow-lg"
+                    >
+                      <item.icon size={24} />
                     </a>
                   ))}
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="aspect-video bg-gray-100 rounded-[2.5rem] overflow-hidden relative group">
-                <img 
-                  src="https://picsum.photos/seed/map/800/450?grayscale" 
-                  alt="Map Placeholder" 
-                  className="w-full h-full object-cover opacity-50"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white px-6 py-3 rounded-full shadow-xl font-bold text-panel-navy flex items-center gap-2">
-                    <MapPin size={18} className="text-solar-red" />
-                    Our Chennai Office
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

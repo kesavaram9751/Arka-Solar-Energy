@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ShieldCheck, Target, Heart, Award, MapPin, Zap, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import aboutImage from '../assets/image1.jpg';
 
 export default function About() {
   return (
@@ -44,10 +45,9 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-4 bg-sun-yellow/20 rounded-[3rem] -rotate-3"></div>
               <img
-                src="https://picsum.photos/seed/team/800/600"
+                src={aboutImage}
                 alt="Our Team"
                 className="relative z-10 rounded-[2.5rem] shadow-2xl object-cover w-full h-[400px]"
-                referrerPolicy="no-referrer"
               />
             </div>
           </div>
