@@ -2,7 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { ShieldCheck, Target, Heart, Award, MapPin, Zap, Sun } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import aboutImage from '../assets/image1.jpg';
+import aboutImage from '../assets/image6.jpg';
+import climateImage from '../assets/image1.jpg';
 
 export default function About() {
   return (
@@ -59,9 +60,13 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { icon: Sun, title: "Our Mission", text: "To make clean, affordable solar energy accessible to every home and business in Tamil Nadu." },
-              { icon: Target, title: "Our Vision", text: "A Chennai where every rooftop contributes to a sustainable, self-sufficient energy grid." },
-              { icon: Heart, title: "Our Values", text: "Transparency, Quality, Customer-First, and Engineering Excellence in every project." }
+              { icon: Sun, title: "Our Vision", text: "To lead the renewable revolution by making solar the heartbeat of every home and business, empowering our community with clean, limitless energy for a brighter tomorrow." },
+              { icon: Target, title: "Our Mission", text: "Our mission is to deliver world-class solar technology to the common people. We aim to maximize our customers' return on investment by providing high-performance energy systems, expert consultancy, and life-long support, making 'Your Solar Partner' a promise of quality and trust." },
+              { icon: Heart, title: "Core Values", text: "Innovation: Deploying advanced cutting-edge solar panels, AI-driven monitoring, and hybrid inverters for maximum efficiency in tropical climates." },
+              { icon: ShieldCheck, title: "Reliability", text: "25-year warranties, 99% uptime, and rigorous quality control from design to commissioning." },
+              { icon: Award, title: "Transparency", text: "Clear pricing, accurate ROI calculations, and full regulatory compliance with MNRE and TANGEDCO." },
+              { icon: Zap, title: "Sustainability", text: "Prioritizing eco-friendly materials, waste reduction, and community solar programs for lasting impact." },
+              { icon: MapPin, title: "Partnership", text: "Tailored solutions, flexible financing, and dedicated 24/7 service to build long-term client success." }
             ].map((item, i) => (
               <div key={i} className="bg-white p-10 rounded-[2rem] shadow-sm border border-gray-100 space-y-6">
                 <div className="w-14 h-14 bg-solar-red/5 rounded-2xl flex items-center justify-center text-solar-red">
@@ -76,7 +81,7 @@ export default function About() {
       </section>
 
       {/* Expertise */}
-      <section className="py-24">
+      {/* <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl font-bold text-panel-navy">What Sets Us Apart</h2>
@@ -96,17 +101,17 @@ export default function About() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Stats */}
       <section className="py-20 bg-panel-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 text-center">
             {[
-              { val: "50+", label: "Installations Completed" },
-              { val: "500 kW+", label: "Total Capacity Installed" },
+              { val: "200+", label: "Installations Completed" },
+              { val: "2 MW", label: "Total Capacity Installed" },
               { val: "100%", label: "Client Satisfaction" },
-              { val: "25 Years", label: "Equipment Warranty" }
+              { val: "24/7 Support", label: "Equipment Warranty" }
             ].map((stat, i) => (
               <div key={i} className="space-y-2">
                 <div className="text-4xl md:text-5xl font-bold text-sun-yellow">{stat.val}</div>
@@ -117,20 +122,41 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA Strip */}
-      <section className="py-12 bg-solar-red">
+
+
+      {/* Solar Solutions Built for Tamilnadu’s Climate */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
-            <h2 className="text-2xl md:text-3xl font-bold text-white">Ready to Work With Chennai's Trusted Solar Partner?</h2>
-            <Link
-              to="/contact"
-              className="bg-sun-yellow text-panel-navy px-8 py-4 rounded-full font-bold hover:bg-white transition-all shadow-xl whitespace-nowrap"
-            >
-              Get a Free Site Assessment
-            </Link>
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-4xl font-bold text-panel-navy">Solar Solutions Built for Tamilnadu’s Climate</h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
+              Tamilnadu enjoys over 2,800–3,000 hours of sunshine per year, making rooftop solar one of the most effective and cost‑saving energy options in the city. At Arka Solar Energy, we design systems that withstand coastal humidity, high temperatures, and monsoon conditions, ensuring durability and long‑term performance for homes, apartments, and industries across Chennai.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="absolute -inset-4 bg-sun-yellow/20 rounded-[3rem] -rotate-3"></div>
+              <img
+                src={climateImage}
+                alt="Solar Solutions in Tamilnadu"
+                className="relative z-10 rounded-[2.5rem] shadow-2xl object-cover w-full h-[400px]"
+              />
+            </div>
+            <div className="space-y-6 text-gray-600 leading-relaxed">
+              <p className="text-lg">
+                Our solar solutions are tailored to meet the unique challenges of Tamilnadu’s climate. With advanced technology and a commitment to sustainability, we ensure that your solar investment delivers maximum returns and long-lasting benefits.
+              </p>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Designed for coastal humidity and high temperatures</li>
+                <li>Durable systems for monsoon conditions</li>
+                <li>Optimized for long-term performance and savings</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
+
+
     </div>
   );
 }

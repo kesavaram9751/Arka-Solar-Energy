@@ -28,9 +28,9 @@ export default function Footer() {
               <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center overflow-hidden">
                 <img src={arkaLogo} alt="Arka Solar Energy logo" className="w-full h-full object-contain" />
               </div>
-              <div className="flex flex-col">
-                <span className="font-display font-bold text-lg leading-none text-white">ARKA SOLAR</span>
-                <span className="text-[10px] tracking-widest uppercase font-medium text-sun-yellow">Energy</span>
+              <div className="flex flex-col items-center text-center">
+                <span className="font-display font-bold text-lg leading-none text-solar-red">ARKA SOLAR ENERGY</span>
+                <span className="text-[10px] tracking-widest uppercase font-medium text-yellow-400">Your Solar Partner</span>
               </div>
             </Link>
             <p className="text-white/70 text-sm leading-relaxed max-w-xs">
@@ -64,7 +64,7 @@ export default function Footer() {
                 </li>
               ))}
               <li>
-                <Link to="/services" className="text-white/70 hover:text-sun-yellow transition-colors text-sm">
+                <Link to="/#pm-surya-ghar" className="text-white/70 hover:text-sun-yellow transition-colors text-sm">
                   PM Surya Ghar Subsidy
                 </Link>
               </li>

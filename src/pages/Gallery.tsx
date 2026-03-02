@@ -1,17 +1,34 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Zap, Maximize2 } from 'lucide-react';
+import residential1 from '../assets/residential1.jpeg';
+import residential2 from '../assets/resedential2.jpeg';
+import residential3 from '../assets/resedentail3.jpeg';
+import residential4 from '../assets/resedential4.jpeg';
+import residential5 from '../assets/resedentail5.jpeg';
+import residential6 from '../assets/resedentail6.jpeg';
+import residential7 from '../assets/resedentail7.jpeg';
+import residential8 from '../assets/resedentail8.jpeg';
+import commercial1 from '../assets/commercial1.jpeg';
+import commercial2 from '../assets/commercial2.jpeg';
+import commercial3 from '../assets/commercial3.jpeg';
+import industrial1 from '../assets/industrial1.jpeg';
+import apartment1 from '../assets/apartment1.jpeg';
 
 const PROJECTS = [
-  { id: 1, type: 'Residential', loc: 'Anna Nagar, Chennai', cap: '3 kW', img: 'https://picsum.photos/seed/proj1/800/600' },
-  { id: 2, type: 'Residential', loc: 'Velachery, Chennai', cap: '5 kW', img: 'https://picsum.photos/seed/proj2/800/600' },
-  { id: 3, type: 'Commercial', loc: 'T. Nagar, Chennai', cap: '10 kW', img: 'https://picsum.photos/seed/proj3/800/600' },
-  { id: 4, type: 'Industrial', loc: 'Ambattur, Chennai', cap: '50 kW', img: 'https://picsum.photos/seed/proj4/800/600' },
-  { id: 5, type: 'Apartment', loc: 'Porur, Chennai', cap: '8 kW', img: 'https://picsum.photos/seed/proj5/800/600' },
-  { id: 6, type: 'Residential', loc: 'Tambaram, Chennai', cap: '4 kW', img: 'https://picsum.photos/seed/proj6/800/600' },
-  { id: 7, type: 'Commercial', loc: 'OMR, Chennai', cap: '20 kW', img: 'https://picsum.photos/seed/proj7/800/600' },
-  { id: 8, type: 'Residential', loc: 'Chromepet, Chennai', cap: '3 kW', img: 'https://picsum.photos/seed/proj8/800/600' },
-  { id: 9, type: 'Industrial', loc: 'Sriperumbudur', cap: '100 kW', img: 'https://picsum.photos/seed/proj9/800/600' },
+  { id: 1, type: 'Residential', loc: 'Anna Nagar, Chennai', cap: '3 kW', img: residential1 },
+  { id: 2, type: 'Residential', loc: 'Velachery, Chennai', cap: '5 kW', img: residential2 },
+  { id: 3, type: 'Residential', loc: 'Velachery, Chennai', cap: '5 kW', img: residential3 },
+  { id: 4, type: 'Residential', loc: 'Velachery, Chennai', cap: '5 kW', img: residential4 },
+  { id: 5, type: 'Residential', loc: 'Velachery, Chennai', cap: '5 kW', img: residential5 },
+  { id: 6, type: 'Residential', loc: 'Velachery, Chennai', cap: '5 kW', img: residential6 },
+  { id: 7, type: 'Residential', loc: 'Chromepet, Chennai', cap: '3 kW', img: residential7 },
+  { id: 8, type: 'Residential', loc: 'Tambaram, Chennai', cap: '4 kW', img: residential8 },
+  { id: 9, type: 'Commercial', loc: 'OMR, Chennai', cap: '20 kW', img: commercial1 },
+  { id: 10, type: 'Commercial', loc: 'OMR, Chennai', cap: '20 kW', img: commercial2 },
+  { id: 11, type: 'Commercial', loc: 'OMR, Chennai', cap: '20 kW', img: commercial3 },
+  { id: 12, type: 'Industrial', loc: 'Ambattur, Chennai', cap: '50 kW', img: industrial1 },
+  { id: 13, type: 'Apartment', loc: 'Porur, Chennai', cap: '8 kW', img: apartment1 },
 ];
 
 const FILTERS = ['All', 'Residential', 'Apartment', 'Commercial', 'Industrial'];
@@ -20,8 +37,8 @@ export default function Gallery() {
   const [filter, setFilter] = useState('All');
   const [selectedImg, setSelectedImg] = useState<null | typeof PROJECTS[0]>(null);
 
-  const filteredProjects = filter === 'All' 
-    ? PROJECTS 
+  const filteredProjects = filter === 'All'
+    ? PROJECTS
     : PROJECTS.filter(p => p.type === filter);
 
   return (
@@ -44,11 +61,10 @@ export default function Gallery() {
               <button
                 key={f}
                 onClick={() => setFilter(f)}
-                className={`px-6 py-2 rounded-full font-bold transition-all ${
-                  filter === f 
-                    ? 'bg-solar-red text-white shadow-lg shadow-solar-red/20' 
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                }`}
+                className={`px-6 py-2 rounded-full font-bold transition-all ${filter === f
+                  ? 'bg-solar-red text-white shadow-lg shadow-solar-red/20'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
               >
                 {f}
               </button>
@@ -60,7 +76,7 @@ export default function Gallery() {
       {/* Grid */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             layout
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
@@ -111,25 +127,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      {/* Stats Banner */}
-      <section className="py-12 bg-panel-navy text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-12 text-center">
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-sun-yellow">50+</div>
-              <div className="text-xs uppercase font-bold tracking-widest text-white/50">Projects</div>
-            </div>
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-sun-yellow">15+</div>
-              <div className="text-xs uppercase font-bold tracking-widest text-white/50">Areas in Chennai</div>
-            </div>
-            <div className="space-y-1">
-              <div className="text-3xl font-bold text-sun-yellow">500 kW+</div>
-              <div className="text-xs uppercase font-bold tracking-widest text-white/50">Total Capacity</div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Lightbox */}
       <AnimatePresence>

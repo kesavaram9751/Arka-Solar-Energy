@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { ArrowRight, Zap, Sun, ShieldCheck, Award, CheckCircle2, Star, ChevronRight, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { SERVICES } from '../constants';
+// import bannerimage from '../assets/bg.jpg';
+import bannerimage2 from '../assets/bg2.jpeg';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -20,13 +22,24 @@ const itemVariants = {
 };
 
 export default function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.replace('#', '');
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location.hash]);
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://picsum.photos/seed/solar-hero/1920/1080?brightness=0.6"
+            src={bannerimage2}
             alt="Solar Rooftop"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -35,24 +48,21 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-white space-y-8"
+              className="lg:col-span-3 text-white space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-solar-red/20 border border-solar-red/30 text-solar-red text-xs font-bold uppercase tracking-wider">
-                <Sun size={14} />
-                Your Solar Partner
-              </div>
+
               <h1 className="text-5xl md:text-7xl font-bold leading-tight">
                 Powering Chennai with <br />
                 <span className="text-sun-yellow">Clean, Reliable</span> <br />
                 Solar Energy.
               </h1>
-              <p className="text-lg text-white/80 max-w-xl leading-relaxed">
-                ARKA Solar Energy is your trusted EPC partner for end-to-end solar solutions. From custom engineering to final grid connection, we make switching to solar seamless, profitable, and hassle-free.
+              <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
+                Arka Solar Energy is a leading solar EPC company based in Chennai, specializing in rooftop solar power plants for residential homes, apartments, and commercial industries. We offer end-to-end services from site survey and system design to installation, net-metering connection, and after-sales support. Our team focuses on high-quality components, quick approvals, and maximum savings on your electricity bills.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
@@ -83,7 +93,7 @@ export default function Home() {
                     <Zap size={24} />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-dark-charcoal">50+</div>
+                    <div className="text-2xl font-bold text-dark-charcoal">200+</div>
                     <div className="text-xs text-gray-500 uppercase font-semibold">Installations</div>
                   </div>
                 </div>
@@ -92,7 +102,7 @@ export default function Home() {
                     <Sun size={24} />
                   </div>
                   <div>
-                    <div className="text-2xl font-bold text-dark-charcoal">500 kW+</div>
+                    <div className="text-2xl font-bold text-dark-charcoal">2 MW</div>
                     <div className="text-xs text-gray-500 uppercase font-semibold">Capacity</div>
                   </div>
                 </div>
@@ -117,9 +127,9 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { icon: Zap, text: "Premium Tier-1 Equipment" },
-              { icon: Award, text: "TANGEDCO Paperwork Handled" },
               { icon: ShieldCheck, text: "Expert Engineering Team" },
-              { icon: Sun, text: "MNRE Certified Installations" }
+              { icon: Sun, text: "MNRE Certified Installations" },
+              { icon: Award, text: "TANGEDCO Paperwork Handled" }
             ].map((item, i) => (
               <div key={i} className="flex flex-col md:flex-row items-center gap-3 text-center md:text-left">
                 <item.icon className="text-solar-red" size={24} />
@@ -131,11 +141,11 @@ export default function Home() {
       </section>
 
       {/* PM Surya Ghar Section */}
-      <section className="py-24">
+      <section id="pm-surya-ghar" className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="subsidy-gradient rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden shadow-2xl shadow-sun-yellow/20">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl"></div>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
               <div className="space-y-8">
                 <div className="inline-block bg-solar-red text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full">
@@ -200,7 +210,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <h2 className="text-4xl font-bold text-panel-navy">Comprehensive Solar Solutions</h2>
-            <p className="text-gray-600">As a full-service EPC company, we handle your entire project from day one.</p>
+            <p className="text-gray-600">Tamilnadu enjoys over 2,800–3,000 hours of sunshine per year, making rooftop solar one of the most effective and cost‑saving energy options in the city. At Arka Solar Energy, we design systems that withstand coastal humidity, high temperatures, and monsoon conditions, ensuring durability and long‑term performance for homes, apartments, and industries across Chennai.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -233,13 +243,14 @@ export default function Home() {
             <p className="text-gray-600">A simple, transparent 4-step process.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
             <div className="hidden md:block absolute top-12 left-0 right-0 h-0.5 bg-gray-100 z-0"></div>
             {[
               { id: '01', title: 'Site Inspection', desc: 'We visit your property in Chennai to assess your roof, shading, and energy consumption.' },
               { id: '02', title: 'Custom Engineering', desc: 'Our experts create a precise 3D design and select the best equipment for your needs.' },
               { id: '03', title: 'Flawless Installation', desc: 'Our trained technicians install your system safely, cleanly, and to the highest codes.' },
-              { id: '04', title: 'Commissioning', desc: 'We finalize grid connections, secure your subsidies, and hand over your power plant!' }
+              { id: '04', title: 'Commissioning', desc: 'We finalize grid connections, secure your subsidies, and hand over your power plant!' },
+              { id: '05', title: 'Netmeter', desc: 'We handle all utility liaisoning and meter installation to credit your surplus solar energy back to the grid.' }
             ].map((step, i) => (
               <div key={i} className="relative z-10 text-center space-y-6">
                 <div className="w-16 h-16 bg-white border-4 border-solar-red rounded-full flex items-center justify-center text-solar-red font-bold text-xl mx-auto shadow-lg">
@@ -267,7 +278,7 @@ export default function Home() {
               { icon: ShieldCheck, title: "End-to-End EPC", text: "From site survey to final commissioning, we handle absolutely everything." },
               { icon: Award, title: "Transparent Pricing", text: "No hidden costs. Honest ROI projections you can count on." },
               { icon: Sun, title: "Subsidy Specialists", text: "Experts in PM Surya Ghar and TANGEDCO net-metering paperwork." },
-              { icon: ShieldCheck, title: "25+ Year Support", text: "Our relationship doesn't end at installation. We're your long-term partner." }
+              { icon: ShieldCheck, title: "Customer Services", text: "Our relationship doesn't end at installation. We're your long-term partner." }
             ].map((feature, i) => (
               <div key={i} className="space-y-4">
                 <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-sun-yellow">
@@ -322,7 +333,7 @@ export default function Home() {
                 to="/contact"
                 className="bg-white text-solar-red px-10 py-4 rounded-full font-bold text-lg hover:bg-sun-yellow hover:text-panel-navy transition-all shadow-xl"
               >
-                Request Free Call Back
+                Get a Free site Assessment
               </Link>
               <a
                 href="tel:+919876543210"

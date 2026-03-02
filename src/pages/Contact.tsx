@@ -79,7 +79,7 @@ export default function Contact() {
                         placeholder="John Doe"
                         className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
                         value={formData.name}
-                        onChange={e => setFormData({...formData, name: e.target.value})}
+                        onChange={e => setFormData({ ...formData, name: e.target.value })}
                       />
                     </div>
                     <div className="space-y-2">
@@ -90,7 +90,7 @@ export default function Contact() {
                         placeholder="+91 98765 43210"
                         className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
                         value={formData.phone}
-                        onChange={e => setFormData({...formData, phone: e.target.value})}
+                        onChange={e => setFormData({ ...formData, phone: e.target.value })}
                       />
                     </div>
                   </div>
@@ -101,7 +101,7 @@ export default function Contact() {
                       <select
                         className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all appearance-none"
                         value={formData.propertyType}
-                        onChange={e => setFormData({...formData, propertyType: e.target.value})}
+                        onChange={e => setFormData({ ...formData, propertyType: e.target.value })}
                       >
                         <option>Residential</option>
                         <option>Apartment</option>
@@ -114,12 +114,12 @@ export default function Contact() {
                       <select
                         className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all appearance-none"
                         value={formData.billRange}
-                        onChange={e => setFormData({...formData, billRange: e.target.value})}
+                        onChange={e => setFormData({ ...formData, billRange: e.target.value })}
                       >
-                        <option>₹500–₹1,000</option>
                         <option>₹1,000–₹3,000</option>
                         <option>₹3,000–₹6,000</option>
-                        <option>₹6,000+</option>
+                        <option>₹6,000–₹10,000</option>
+                        <option>₹10,000+</option>
                       </select>
                     </div>
                   </div>
@@ -132,7 +132,7 @@ export default function Contact() {
                       placeholder="e.g. Anna Nagar, 600040"
                       className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all"
                       value={formData.area}
-                      onChange={e => setFormData({...formData, area: e.target.value})}
+                      onChange={e => setFormData({ ...formData, area: e.target.value })}
                     />
                   </div>
 
@@ -143,7 +143,7 @@ export default function Contact() {
                       placeholder="Tell us about your roof or energy needs..."
                       className="w-full px-5 py-3 bg-gray-50 border-none rounded-2xl focus:ring-2 focus:ring-solar-red transition-all resize-none"
                       value={formData.message}
-                      onChange={e => setFormData({...formData, message: e.target.value})}
+                      onChange={e => setFormData({ ...formData, message: e.target.value })}
                     ></textarea>
                   </div>
 
@@ -225,10 +225,116 @@ export default function Contact() {
 
           <div className="space-y-4">
             {[
-              { q: "How much does a residential solar system cost in Chennai?", a: "The cost depends on the system size. A 3 kW system typically costs between ₹1.5–₹2.0 lakhs before subsidy. After the PM Surya Ghar subsidy of ₹78,000, the effective cost drops significantly." },
-              { q: "What is the PM Surya Ghar: Muft Bijli Yojana?", a: "It is a Government of India scheme that provides subsidies for residential rooftop solar installations. Eligible households can claim up to ₹78,000 as a direct subsidy." },
-              { q: "How long does the installation process take?", a: "Typically 3–7 working days for residential systems after all approvals are in place. We handle all TANGEDCO and government portal paperwork." },
-              { q: "What is net metering and how does it benefit me?", a: "Net metering allows your excess solar power to be fed back to the TANGEDCO grid. You earn credits for the surplus, which are adjusted against your next electricity bill." }
+              {
+                q: "How much direct subsidy will I receive in 2026?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      Under the PM Surya Ghar Muft Bijli Yojana, the subsidy is credited directly to your bank account
+                      (DBT) based on your system capacity:
+                    </p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>1 kW System: ₹30,000</li>
+                      <li>2 kW System: ₹60,000</li>
+                      <li>3 kW to 10 kW: Capped at ₹78,000 (Maximum)</li>
+                    </ul>
+                  </div>
+                )
+              },
+              {
+                q: "Is there a subsidy for my commercial office or factory?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      Direct cash subsidies are currently reserved for residential households. However, commercial and
+                      industrial (C&I) clients in Tamil Nadu can claim Accelerated Depreciation (AD) and GST Input Tax
+                      Credits, which can effectively reduce project costs by up to 25–30%.
+                    </p>
+                  </div>
+                )
+              },
+              {
+                q: "How long does it take for the money to reach my account?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      Once the installation is complete and the net meter is installed by TANGEDCO, we submit the
+                      Commissioning Certificate on the National Portal. Usually, the subsidy is disbursed within 30
+                      days of this final step.
+                    </p>
+                  </div>
+                )
+              },
+              {
+                q: "What is a net meter and why do I need it?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      A net meter is a bi-directional meter that replaces your existing TANGEDCO meter. It tracks two
+                      things:
+                    </p>
+                    <ul className="list-disc pl-5 space-y-1">
+                      <li>Import: Electricity you take from the grid (at night).</li>
+                      <li>Export: Excess solar power you send to the grid (during the day).</li>
+                    </ul>
+                    <p>
+                      At the end of the month, you only pay for the net difference. If you export more than you import,
+                      the credit is carried forward to your next bill.
+                    </p>
+                  </div>
+                )
+              },
+              {
+                q: "Can I install a system larger than my sanctioned load?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      No. TANGEDCO rules state that your solar plant capacity cannot exceed your sanctioned load.
+                    </p>
+                    <p>
+                      Partner Tip: If your sanctioned load is 3 kW but you want a 5 kW solar system, we can help you
+                      apply for a load enhancement through the TANGEDCO portal before we start the installation.
+                    </p>
+                  </div>
+                )
+              },
+              {
+                q: "Do I need to pay for the net meter?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      Yes, there is a nominal fee for the meter and the application. In Chennai, the total cost for the
+                      net meter, registration, and testing usually ranges between ₹3,000 to ₹8,000, depending on
+                      whether it is a single-phase or three-phase connection.
+                    </p>
+                  </div>
+                )
+              },
+              {
+                q: "What happens to my excess power at the end of the year?",
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      In Tamil Nadu, the settlement period is usually from April to March. If you have excess units
+                      credited in your account by March 31, TANGEDCO may pay you for those units at a pre-determined
+                      feed-in tariff rate (usually lower than the retail rate), or it may reset to zero depending on the
+                      latest TNERC regulations.
+                    </p>
+                  </div>
+                )
+              },
+              {
+                q: 'Why Choose "Your Solar Partner"?',
+                a: (
+                  <div className="space-y-3">
+                    <p>
+                      We don&apos;t just install panels; we manage the entire TANGEDCO paperwork for you. From
+                      registering on the National Portal to getting your net meter commissioned, we ensure you get the
+                      maximum subsidy with zero hassle.
+                    </p>
+                  </div>
+                )
+              }
             ].map((faq, i) => (
               <details key={i} className="group bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
                 <summary className="flex items-center justify-between p-6 cursor-pointer font-bold text-panel-navy list-none">
@@ -246,3 +352,4 @@ export default function Contact() {
     </div>
   );
 }
+

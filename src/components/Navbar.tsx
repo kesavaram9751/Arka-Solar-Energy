@@ -28,9 +28,9 @@ export default function Navbar() {
             <div className="w-15 h-15 bg-white rounded-full flex items-center justify-center overflow-hidden">
               <img src={arkaLogo} alt="Arka Solar Energy logo" className="w-full h-full object-contain" />
             </div>
-            <div className="flex flex-col">
-              <span className="font-display font-bold text-lg leading-none text-solar-red">ARKA SOLAR</span>
-              <span className="text-[10px] tracking-widest uppercase font-medium text-panel-navy">Energy</span>
+            <div className="flex flex-col items-center text-center">
+              <span className="font-display font-bold text-lg leading-none text-solar-red">ARKA SOLAR ENERGY</span>
+              <span className="text-[10px] tracking-widest uppercase font-medium text-yellow-400">Your Solar Partner</span>
             </div>
           </Link>
 
@@ -40,9 +40,8 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-solar-red ${
-                  location.pathname === link.path ? 'text-solar-red' : 'text-dark-charcoal'
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-solar-red ${location.pathname === link.path ? 'text-solar-red' : 'text-dark-charcoal'
+                  }`}
               >
                 {link.name}
               </Link>
@@ -77,9 +76,8 @@ export default function Navbar() {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`block px-3 py-3 text-base font-medium rounded-md ${
-                    location.pathname === link.path ? 'bg-solar-red/5 text-solar-red' : 'text-dark-charcoal hover:bg-gray-50'
-                  }`}
+                  className={`block px-3 py-3 text-base font-medium rounded-md ${location.pathname === link.path ? 'bg-solar-red/5 text-solar-red' : 'text-dark-charcoal hover:bg-gray-50'
+                    }`}
                 >
                   {link.name}
                 </Link>
