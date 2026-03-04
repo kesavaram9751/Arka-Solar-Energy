@@ -335,7 +335,7 @@ export default function Home() {
                 Get a Free site Assessment
               </Link>
               <a
-                href="tel:+919876543210"
+                href="tel:+917708924365"
                 className="bg-panel-navy text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-panel-navy/90 transition-all border border-white/10"
               >
                 Call Us: +91 77089 24365
