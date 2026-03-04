@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Instagram, Facebook, MessageCircle, Send, ChevronDown } from 'lucide-react';
 import { CONTACT_INFO } from '../constants';
+import contactBg from '../assets/contact-us-bg.jpg';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -48,8 +49,16 @@ export default function Contact() {
   return (
     <div className="pt-28">
       {/* Hero */}
-      <section className="bg-panel-navy py-24 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section
+        className="relative min-h-[50vh] flex items-center justify-center text-white text-center"
+        style={{
+          backgroundImage: `linear-gradient(rgba(43, 47, 143, 0.5), rgba(43, 47, 143, 0.5)), url(${contactBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold">Let's Get You Started on Solar</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Our team is ready to answer all your questions and guide you through the process.

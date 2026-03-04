@@ -301,9 +301,9 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Ramesh K.", loc: "Anna Nagar, Chennai", text: "Arka Solar made the subsidy process so easy. Our electricity bill is now almost zero!" },
-              { name: "Priya S.", loc: "OMR, Chennai", text: "Professional team, clean installation, and they handled all the TANGEDCO paperwork. Highly recommended!" },
-              { name: "Suresh M.", loc: "Ambattur Industrial Estate", text: "Excellent service for our factory unit. The ROI calculations were spot on and the system has been flawless." }
+              { name: "Bharathkumar K", text: "Prompt delivery. Quality as promised. Service minded team. Cost effective. Care that was taken by the total team is to be appreciated" },
+              { name: "Amarjothi Sankar", text: "We are greatly satisfied with their recent solar installation service provided by ARKA SOLAR Energy. From the initial discussion to final installation, everything was handled with great professionalism and commitment.What truly impressed us was their sense of responsibility in managing all the procedures, approvals, and documentation smoothly." },
+              { name: "karthik morgan", text: "Excellent service from ARKA Solar Energy — the team was professional, knowledgeable, and completed the installation on time.They explained everything clearly and made the entire process smooth and hassle-free.Very happy with the system performance and already seeing savings on my electricity bill!" }
             ].map((t, i) => (
               <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 space-y-6">
                 <div className="flex text-sun-yellow">
@@ -312,7 +312,6 @@ export default function Home() {
                 <p className="text-gray-600 italic">"{t.text}"</p>
                 <div className="pt-4 border-t border-gray-50">
                   <div className="font-bold text-panel-navy">{t.name}</div>
-                  <div className="text-xs text-gray-500">{t.loc}</div>
                 </div>
               </div>
             ))}
@@ -339,7 +338,7 @@ export default function Home() {
                 href="tel:+919876543210"
                 className="bg-panel-navy text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-panel-navy/90 transition-all border border-white/10"
               >
-                Call Us: +91 98765 43210
+                Call Us: +91 77089 24365
               </a>
             </div>
           </div>

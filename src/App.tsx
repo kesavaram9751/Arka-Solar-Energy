@@ -48,9 +48,22 @@ function AppContent() {
     );
 
     const sections = Array.from(document.querySelectorAll('main section'));
-    sections.forEach(section => {
-      section.classList.add('reveal');
-      observer.observe(section);
+    sections.forEach((section) => {
+      const rect = section.getBoundingClientRect();
+      const isTopSection = rect.top < window.innerHeight;
+
+      if (isTopSection) {
+        // Elements currently in viewport or at top should show immediately
+        section.classList.add('reveal');
+        // Small timeout to ensure CSS transitions trigger correctly
+        setTimeout(() => {
+          section.classList.add('is-visible');
+        }, 50);
+      } else {
+        // Elements further down wait for scroll
+        section.classList.add('reveal');
+        observer.observe(section);
+      }
     });
 
     return () => observer.disconnect();
