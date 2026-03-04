@@ -4,15 +4,16 @@ import { ShieldCheck, Target, Heart, Award, MapPin, Zap, Sun } from 'lucide-reac
 import { Link } from 'react-router-dom';
 import aboutImage from '../assets/image6.jpg';
 import climateImage from '../assets/image1.jpg';
+import aboutBanner from '../assets/about-us-banner.jpg';
 
 export default function About() {
   return (
     <div className="pt-28">
       {/* Hero */}
-      <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="https://picsum.photos/seed/about-hero/1920/600?brightness=0.5"
+            src={aboutBanner}
             alt="About Arka Solar"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
@@ -111,7 +112,7 @@ export default function About() {
               { val: "200+", label: "Installations Completed" },
               { val: "2 MW", label: "Total Capacity Installed" },
               { val: "100%", label: "Client Satisfaction" },
-              { val: "24/7 Support", label: "Equipment Warranty" }
+              { val: "24/7 Support", label: "Customer Support" }
             ].map((stat, i) => (
               <div key={i} className="space-y-2">
                 <div className="text-4xl md:text-5xl font-bold text-sun-yellow">{stat.val}</div>

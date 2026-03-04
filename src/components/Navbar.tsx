@@ -30,7 +30,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col items-center text-center">
               <span className="font-display font-bold text-lg leading-none text-solar-red">ARKA SOLAR ENERGY</span>
-              <span className="text-[10px] tracking-widest uppercase font-medium text-yellow-400">Your Solar Partner</span>
+              <span className="text-[10px] tracking-widest uppercase font-medium text-black-700">Your Solar Partner</span>
             </div>
           </Link>
 

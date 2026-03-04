@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import { SERVICES } from '../constants';
 import serviceImage2 from '../assets/image2.jpg';
 import serviceImage3 from '../assets/image3.jpg';
-import serviceImage4 from '../assets/image4.jpg';
+import serviceImage7 from '../assets/image7.jpg';
 import serviceImage5 from '../assets/image5.jpg';
+import servicesBanner from '../assets/services-banner.jpg';
 
 const ICON_MAP: Record<string, any> = {
   Home: Home,
@@ -14,7 +15,7 @@ const ICON_MAP: Record<string, any> = {
   Wrench: Wrench
 };
 const SERVICE_IMAGES: Record<string, string> = {
-  residential: serviceImage4,
+  residential: serviceImage7,
   commercial: serviceImage3,
   apartment: serviceImage2,
   om: serviceImage5
@@ -24,8 +25,16 @@ export default function Services() {
   return (
     <div className="pt-28">
       {/* Hero */}
-      <section className="bg-panel-navy py-24 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <section
+        className="relative min-h-[50vh] flex items-center justify-center text-white text-center"
+        style={{
+          backgroundImage: `linear-gradient(rgba(43, 47, 143, 0.5), rgba(43, 47, 143, 0.5)), url(${servicesBanner})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundAttachment: 'fixed'
+        }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold">Our Solar EPC Services</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
             Complete end-to-end solar solutions for homes, businesses, and industries in Chennai.
@@ -38,7 +47,7 @@ export default function Services() {
         {SERVICES.map((service, i) => {
           const Icon = ICON_MAP[service.icon];
           const isEven = i % 2 === 0;
-          
+
           return (
             <div key={service.id} className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${!isEven ? 'lg:flex-row-reverse' : ''}`}>
@@ -132,7 +141,7 @@ export default function Services() {
         </div>
       </section>
 
-      
+
     </div>
   );
 }
