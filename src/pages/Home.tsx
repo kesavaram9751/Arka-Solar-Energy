@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Zap, Sun, ShieldCheck, Award, CheckCircle2, Star, ChevronRight, MapPin } from 'lucide-react';
+import { ArrowRight, Zap, Sun, ShieldCheck, Award, CheckCircle2, Star, ChevronRight, MapPin, MessageCircle, Facebook, Instagram } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
-import { SERVICES } from '../constants';
+import { SERVICES, CONTACT_INFO } from '../constants';
 // import bannerimage from '../assets/bg.jpg';
 import bannerimage2 from '../assets/bg2.jpeg';
 
@@ -56,14 +56,19 @@ export default function Home() {
               className="lg:col-span-3 text-white space-y-8"
             >
 
-              <h1 className="text-5xl md:text-7xl font-bold leading-tight">
-                Powering Chennai with <br />
-                <span className="text-sun-yellow">Clean, Reliable</span> <br />
-                Solar Energy.
+              <h1 className="text-4xl md:text-7xl font-bold leading-tight">
+                <span className="text-sun-yellow">Best Solar Company in Chennai | </span>
+                Get solar subsidy and enjoy zero electricity bills
               </h1>
-              <p className="text-lg text-white/80 max-w-2xl leading-relaxed">
-                Arka Solar Energy is a leading solar EPC company based in Chennai, specializing in rooftop solar power plants for residential homes, apartments, and commercial industries. We offer end-to-end services from site survey and system design to installation, net-metering connection, and after-sales support. Our team focuses on high-quality components, quick approvals, and maximum savings on your electricity bills.
-              </p>
+              <div className="text-lg text-white/80 max-w-2xl leading-relaxed space-y-4">
+                <p>
+                  <strong>Arka Solar Energy</strong> is one of the <strong>best solar panel installation companies in Chennai</strong>.
+                  We provide high-quality <strong>rooftop solar systems</strong> for homes, businesses, and industries across Tamil Nadu.
+                  Our expert team helps customers install solar panels with government subsidy
+                  through the <strong>PM Surya Ghar scheme</strong> in your own neighborhood.
+                </p>
+
+              </div>
               <div className="flex flex-wrap gap-4 pt-4">
                 <Link
                   to="/contact"
@@ -152,8 +157,8 @@ export default function Home() {
                   🇮🇳 Government of India Scheme
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-panel-navy leading-tight">
-                  Claim Up to ₹78,000 with the <br />
-                  <span className="text-solar-red">PM Surya Ghar Yojana!</span>
+                  PM Surya Ghar Subsidy Details: <br />
+                  <span className="text-solar-red">Claim Up to ₹78,000!</span>
                 </h2>
                 <p className="text-lg text-panel-navy/80 leading-relaxed">
                   Make the smart switch to solar with government support. Under the PM Surya Ghar: Muft Bijli Yojana, residential installations are highly subsidized — giving you up to 300 units of free electricity every month.
@@ -209,8 +214,8 @@ export default function Home() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <h2 className="text-4xl font-bold text-panel-navy">Comprehensive Solar Solutions</h2>
-            <p className="text-gray-600">Tamilnadu enjoys over 2,800–3,000 hours of sunshine per year, making rooftop solar one of the most effective and cost‑saving energy options in the city. At Arka Solar Energy, we design systems that withstand coastal humidity, high temperatures, and monsoon conditions, ensuring durability and long‑term performance for homes, apartments, and industries across Chennai.</p>
+            <h2 className="text-4xl font-bold text-panel-navy">Solar Panel Installation in Chennai</h2>
+            <p className="text-gray-600">Arka Solar Energy provides the <strong>best solar panel installation in Chennai</strong> for homes and businesses. Tamilnadu enjoys over 3,000 hours of sunshine per year, making rooftop solar the most effective energy option in the city. We design systems that withstand coastal humidity, ensuring durability for <Link to="/services" className="hover:underline text-solar-red">Residential Solar Installation</Link> and <Link to="/services" className="hover:underline text-solar-red">Commercial Solar Solutions</Link> across Chennai.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -239,8 +244,8 @@ export default function Home() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <h2 className="text-4xl font-bold text-panel-navy">How We Bring Power to Your Roof</h2>
-            <p className="text-gray-600">A simple, transparent 4-step process.</p>
+            <h2 className="text-4xl font-bold text-panel-navy">Arka Solar Installation Process</h2>
+            <p className="text-gray-600">Our seamless 5-step process for your <strong>solar panel installation in Chennai</strong>.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-8 relative">
@@ -268,7 +273,7 @@ export default function Home() {
       <section className="py-24 bg-panel-navy text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-            <h2 className="text-4xl font-bold">Why Chennai Trusts Arka Solar Energy</h2>
+            <h2 className="text-4xl font-bold">Why Choose Arka Solar Energy?</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -288,6 +293,195 @@ export default function Home() {
                 <p className="text-white/60 text-sm leading-relaxed">{feature.text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Detailed Benefits Section */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <h1 className="text-4xl font-bold text-panel-navy">Best Solar Company in Chennai: Your Rooftop Solar Partner</h1>
+              <p className="text-gray-600 leading-relaxed">
+                Installing a <strong>rooftop solar system in Chennai</strong> offers incredible benefits for both residential and commercial properties. As the most reliable <strong>solar installer near me</strong>, Arka Solar Energy provides top-tier <Link to="/services" className="text-solar-red hover:underline">residential solar installation Chennai</Link> and <Link to="/services" className="text-solar-red hover:underline">commercial solar installation Chennai</Link> services that ensure high ROI.
+              </p>
+              <p className="text-gray-600 leading-relaxed">
+                If you are searching for a <strong>solar company near me</strong> in Tamil Nadu, our team handles everything—from explaining the <strong>solar panel price in Chennai</strong> to securing your <strong>solar rooftop subsidy Chennai</strong>. Whether you need a <strong>3kw solar system price in Chennai</strong> or information on the latest government policies, we are here to help.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {[
+                  { title: "Residential Solar Installation", desc: "Perfect for single houses and villas to eliminate monthly EB bills.", link: "/#pm-surya-ghar" },
+                  { title: "Commercial Solar Solutions", desc: "Robust engineering for industries and apartments in Chennai.", link: "/services" },
+                  { title: "Massive Cost Savings", desc: "Reduce electricity expenses by up to 90% via net-metering.", link: "/contact" },
+                  { title: "Increased Property Value", desc: "Solar-equipped buildings have higher resale value and better ratings.", link: "/about" }
+                ].map((item, i) => (
+                  <div key={i} className="bg-gray-50 p-6 rounded-2xl border border-gray-100 flex flex-col justify-between">
+                    <div>
+                      <h3 className="font-bold text-panel-navy mb-2">{item.title}</h3>
+                      <p className="text-sm text-gray-500 mb-4">{item.desc}</p>
+                    </div>
+                    <Link to={item.link} className="text-solar-red text-xs font-bold hover:underline">Learn more →</Link>
+                  </div>
+                ))}
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Our systems are designed to withstand Chennai's coastal humidity and high temperatures. Whether you are looking for <Link to="/about" className="text-solar-red hover:underline">Arka Solar Energy</Link> details or specific technical advice, our experts are here to help.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="bg-panel-navy rounded-[3rem] p-8 md:p-12 text-white space-y-8 shadow-2xl">
+                <h3 className="text-2xl font-bold">Key Benefits at a Glance</h3>
+                <ul className="space-y-6">
+                  <li className="flex gap-4">
+                    <CheckCircle2 className="text-sun-yellow shrink-0" />
+                    <div>
+                      <h4 className="font-bold">25+ Years Life Expectancy</h4>
+                      <p className="text-white/60 text-sm">Our Tier-1 solar modules are built to last for decades with minimum maintenance.</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <CheckCircle2 className="text-sun-yellow shrink-0" />
+                    <div>
+                      <h4 className="font-bold">Eco-Friendly Investment</h4>
+                      <p className="text-white/60 text-sm">Reduce your carbon footprint and contribute to a greener Chennai.</p>
+                    </div>
+                  </li>
+                  <li className="flex gap-4">
+                    <CheckCircle2 className="text-sun-yellow shrink-0" />
+                    <div>
+                      <h4 className="font-bold">High Return on Investment</h4>
+                      <p className="text-white/60 text-sm">Most systems pay for themselves within 3-4 years of installation.</p>
+                    </div>
+                  </li>
+                </ul>
+                <div className="pt-8 border-t border-white/10">
+                  <p className="text-xs text-white/50 italic text-center">
+                    Data based on average solar irradiation levels in Tamil Nadu as per <a href="https://mnre.gov.in/" target="_blank" rel="noopener noreferrer" className="underline hover:text-white">MNRE guidelines</a>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
+            <h2 className="text-4xl font-bold text-panel-navy">Common Questions About Solar in Chennai</h2>
+            <p className="text-gray-600">Everything you need to know about making the switch to renewable energy.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              {
+                q: "What is the cost of solar panel installation in Chennai?",
+                a: "The <strong>cost of solar panel installation in Chennai</strong> varies based on capacity. For residential setups, a <strong>3kw solar system price in Chennai</strong> typically starts around ₹1.8 Lakhs to ₹2.2 Lakhs (pre-subsidy). For accurate <strong>solar panel price Chennai</strong> details, <Link to='/contact' class='text-solar-red hover:underline'>get a free site assessment</Link> today."
+              },
+              {
+                q: "How to apply for solar subsidy in Tamil Nadu?",
+                a: "Applying for the <strong>PM Surya Ghar solar subsidy Chennai</strong> is easy with Arka. The scheme provides up to ₹78,000 for <strong>home solar system Chennai</strong> projects. Our experts guide you on <strong>how to apply solar subsidy Tamil Nadu</strong> through the official portal."
+              },
+              {
+                q: "What are the benefits of solar energy for homes in Chennai?",
+                a: "The <strong>benefits of solar energy for homes</strong> include eliminating up to 90% of your EB bill, increasing property value, and contributing to a greener city. It is the most effective <strong>solar energy company Chennai</strong> solution for rising electricity tariffs."
+              },
+              {
+                q: "How do I find a reliable solar installer near me?",
+                a: "Arka Solar Energy is the <strong>best solar company in Chennai</strong> with a proven track record. We are a trusted <strong>solar energy company Chennai</strong> providing certified <strong>rooftop solar installation Chennai</strong> with 25+ years of panel warranty."
+              }
+            ].map((faq, i) => (
+              <div key={i} className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                <h4 className="text-lg font-bold text-panel-navy mb-4">{faq.q}</h4>
+                <div className="text-gray-600 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: faq.a }}></div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-12 text-center">
+            <Link to="/contact" className="inline-flex items-center gap-2 text-solar-red font-bold hover:gap-3 transition-all">
+              Have more questions? Ask our solar experts
+              <ArrowRight size={20} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Section */}
+      <section className="py-24 bg-gray-50/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-[3rem] p-8 md:p-16 shadow-2xl shadow-gray-200/50 border border-gray-100/50">
+            <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
+              <h2 className="text-3xl md:text-5xl font-bold text-panel-navy leading-tight">
+                Expert Solar Panel Installation & <br />
+                <span className="text-solar-red">Renewable Energy</span> Services in Chennai
+              </h2>
+              <div className="w-24 h-1 bg-sun-yellow mx-auto rounded-full"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+              <div className="space-y-8">
+                <div className="flex gap-6 group">
+                  <div className="w-14 h-14 bg-solar-red/5 rounded-2xl flex items-center justify-center text-solar-red shrink-0 group-hover:bg-solar-red group-hover:text-white transition-all duration-300">
+                    <Zap size={28} />
+                  </div>
+                  <div className="space-y-4">
+                    <h2 className="text-2xl font-bold text-panel-navy">Residential Solar Installation & Commercial Solutions</h2>
+                    <p className="text-gray-600 leading-relaxed">
+                      As the most trusted provider of <strong>solar panel installation in Chennai</strong>, Arka Solar Energy is committed to helping homeowners and businesses transition to sustainable power. Our comprehensive <strong>solar energy solutions</strong> are designed to withstand Chennai's specific climate conditions, ensuring long-term durability and peak performance for any <Link to="/services" className="text-solar-red hover:underline">rooftop solar power plant</Link>.
+                    </p>
+                    <p className="text-gray-600 leading-relaxed">
+                      Our <Link to="/services" className="text-solar-red hover:underline">rooftop solar systems</Link> utilize premium Tier-1 components, including Tier-1 solar modules and high-efficiency inverters. These advanced technologies, combined with our expert engineering at <strong>Arka Solar Energy</strong>, guarantee that your investment delivers maximum returns for decades to come.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-6 group">
+                  <div className="w-14 h-14 bg-leaf-green/5 rounded-2xl flex items-center justify-center text-leaf-green shrink-0 group-hover:bg-leaf-green group-hover:text-white transition-all duration-300">
+                    <ShieldCheck size={28} />
+                  </div>
+                  <p className="text-gray-600 leading-relaxed py-2">
+                    Transitioning to solar power in Chennai has never been easier, thanks to the <strong>PM Surya Ghar: Muft Bijli Yojana</strong>. Our team provides end-to-end support for subsidy registration, ensuring you receive the maximum government assistance of up to ₹78,000 for residential installations.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-8">
+                <div className="bg-panel-navy/5 p-10 rounded-[2.5rem] border border-panel-navy/5">
+                  <h3 className="text-2xl font-bold text-panel-navy mb-6 flex items-center gap-3">
+                    <Sun className="text-sun-yellow" />
+                    Why Choose Rooftop Solar?
+                  </h3>
+                  <div className="space-y-6 text-gray-600">
+                    <p className="leading-relaxed">
+                      Chennai receives over 300 days of sunshine annually, making it the ideal location for <strong>rooftop solar power plants</strong>. By installing solar, you can eliminate up to 100% of your electricity bills while contributing to a greener environment.
+                    </p>
+                    <p className="leading-relaxed font-medium text-panel-navy">
+                      Our <strong>solar EPC services</strong> include detailed shading analysis and structural checks to ensure your roof is optimized for energy generation.
+                    </p>
+                    <p className="leading-relaxed">
+                      At Arka Solar Energy, we don't just install panels; we build long-term partnerships. Our <strong>solar operations and maintenance (O&M)</strong> programs include regular panel cleaning, system health checks, and performance monitoring.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4 p-6 bg-white rounded-3xl border border-gray-100 shadow-sm">
+                  <div className="flex -space-x-4">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-gray-100 flex items-center justify-center text-[10px] font-bold text-gray-400">
+                        {i}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-sm">
+                    <span className="font-bold text-panel-navy">Join 50+ families</span> already saving with Arka.
+                    <Link to="/contact" className="text-solar-red block hover:underline font-semibold">Get a free site assessment today</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -340,6 +534,36 @@ export default function Home() {
               >
                 Call Us: +91 77089 24365
               </a>
+            </div>
+
+            <div className="pt-8 border-t border-white/20 mt-12">
+              <p className="text-sm font-bold mb-6">Connect with us & share our website:</p>
+              <div className="flex flex-wrap justify-center gap-6">
+                <a
+                  href={CONTACT_INFO.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-white/20 p-3 px-6 rounded-full transition-all flex items-center gap-3 text-sm font-semibold border border-white/10"
+                >
+                  <Facebook size={20} /> Facebook Page
+                </a>
+                <a
+                  href={CONTACT_INFO.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-white/20 p-3 px-6 rounded-full transition-all flex items-center gap-3 text-sm font-semibold border border-white/20"
+                >
+                  <Instagram size={20} /> Instagram
+                </a>
+                <a
+                  href={`https://api.whatsapp.com/send?text=${encodeURIComponent('Check out Arka Solar Energy for the best solar panel installation in Chennai: ' + window.location.href)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/10 hover:bg-white/20 p-3 px-6 rounded-full transition-all flex items-center gap-3 text-sm font-semibold border border-white/10"
+                >
+                  <MessageCircle size={20} /> Share on WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>

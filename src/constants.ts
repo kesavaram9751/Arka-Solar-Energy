@@ -80,4 +80,6 @@ export const CONTACT_INFO = {
   email: 'arkasolarenergy2025@gmail.com',
   phone: '+91 77089 24365',
   whatsapp: '+91 77089 24365',
+  facebook: 'https://www.facebook.com/arkasolarenergy.in',
+  instagram: 'https://www.instagram.com/arkasolar.energy/',
 };

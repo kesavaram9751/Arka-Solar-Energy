@@ -21,8 +21,8 @@ export default function About() {
           <div className="absolute inset-0 bg-panel-navy/60"></div>
         </div>
         <div className="relative z-10 text-center text-white space-y-4 px-4">
-          <h1 className="text-4xl md:text-6xl font-bold">Powering a Greener Tomorrow</h1>
-          <p className="text-lg text-white/80 max-w-2xl mx-auto">One roof at a time, we are transforming how Chennai consumes energy.</p>
+          <h1 className="text-4xl md:text-6xl font-bold">About Arka Solar Energy | Solar Experts in Chennai</h1>
+          <p className="text-lg text-white/80 max-w-2xl mx-auto">One roof at a time, we are transforming how Chennai consumes energy through expert solar panel installation.</p>
         </div>
       </section>
 

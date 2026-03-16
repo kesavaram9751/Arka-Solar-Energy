@@ -37,16 +37,13 @@ export default function Footer() {
               Your Solar Partner. End-to-end solar EPC services in Chennai and Tamil Nadu. Powering a greener tomorrow, one roof at a time.
             </p>
             <div className="flex items-center gap-4">
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-solar-red transition-colors">
+              <a href={CONTACT_INFO.instagram} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-solar-red transition-colors">
                 <Instagram size={16} />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-solar-red transition-colors">
+              <a href={CONTACT_INFO.facebook} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-solar-red transition-colors">
                 <Facebook size={16} />
               </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-solar-red transition-colors">
-                <Youtube size={16} />
-              </a>
-              <a href="#" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-solar-red transition-colors">
+              <a href={`https://wa.me/${CONTACT_INFO.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-solar-red transition-colors">
                 <MessageCircle size={16} />
               </a>
             </div>

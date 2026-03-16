@@ -20,7 +20,10 @@ const globalTags: SeoTag[] = [
   { property: 'og:locale', content: 'en_IN' },
   { property: 'og:site_name', content: 'Arka Solar Energy' },
   { property: 'og:type', content: 'website' },
+  { property: 'og:updated_time', content: new Date().toISOString() },
   { name: 'twitter:card', content: 'summary_large_image' },
+  { name: 'twitter:site', content: '@arkasolarenergy' },
+  { name: 'twitter:creator', content: '@arkasolarenergy' },
 ];
 
 const homeSchema: Record<string, unknown> = {
@@ -58,6 +61,40 @@ const homeSchema: Record<string, unknown> = {
   ],
   priceRange: 'Rs Rs',
   areaServed: { '@type': 'State', name: 'Tamil Nadu' },
+};
+
+const organizationSchema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Arka Solar Energy',
+  url: BASE_URL,
+  logo: `${BASE_URL}/logo.jpg`,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: CONTACT_INFO.phone,
+    contactType: 'customer service',
+    areaServed: 'IN',
+    availableLanguage: 'en',
+  },
+  sameAs: [
+    'https://www.instagram.com/arkasolarenergy',
+    'https://www.facebook.com/arkasolarenergy',
+  ],
+};
+
+const websiteSchema: Record<string, unknown> = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Arka Solar Energy',
+  url: BASE_URL,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${BASE_URL}/?s={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
+  },
 };
 
 const servicesSchema: Record<string, unknown> = {
@@ -132,46 +169,46 @@ const buildPage = (data: Omit<SeoPayload, 'tags'> & { tags: SeoTag[] }): SeoPayl
 
 export const SEO_BY_PATH: Record<string, SeoPayload> = {
   '/': buildPage({
-    title: 'Arka Solar Energy | Best Solar EPC Company in Chennai',
+    title: 'Best Solar Panel Installation in Chennai | Arka Solar Energy',
     tags: [
       {
         name: 'description',
         content:
-          "Arka Solar Energy is Chennai's trusted solar EPC company. Residential, commercial and industrial solar with PM Surya Ghar subsidy up to Rs 78,000. Complete TANGEDCO net metering support. Get a free site assessment.",
+          "Arka Solar Energy: Best solar panel installation in Chennai. Top-rated solar company in Chennai for rooftop solar, residential, and commercial projects with PM Surya Ghar subsidy.",
       },
       {
         name: 'keywords',
         content:
-          'solar panel installation Chennai, best solar company Chennai, solar EPC company Tamil Nadu, PM Surya Ghar Chennai, rooftop solar Chennai, TANGEDCO net metering, solar subsidy Tamil Nadu, residential solar Chennai, Arka Solar Energy',
+          'Solar panel installation in Chennai, Solar company in Chennai, Best solar company in Chennai, Rooftop solar installation Chennai, Solar energy company Chennai, solar panels, solar energy, solar panel installation, solar companies, solar panel cost, rooftop solar, solar panel installation Chennai, rooftop solar system Chennai, solar panel price Chennai, solar installer near me, solar company near me, solar rooftop subsidy Chennai, home solar system Chennai, commercial solar installation Chennai',
       },
       { property: 'og:url', content: `${BASE_URL}/` },
-      { property: 'og:title', content: 'Arka Solar Energy | Best Solar EPC Company in Chennai' },
+      { property: 'og:title', content: 'Best Solar Panel Installation in Chennai | Arka Solar Energy' },
       {
         property: 'og:description',
         content:
-          "Chennai's trusted solar EPC partner. Residential, commercial and industrial solar with PM Surya Ghar subsidy up to Rs 78,000. Free site assessment available.",
+          "Arka Solar Energy is the best solar company in Chennai providing expert solar panel installation, rooftop solar systems, and PM Surya Ghar subsidy assistance.",
       },
       { property: 'og:image', content: `${BASE_URL}/og-home.jpg` },
       { property: 'og:image:width', content: '1200' },
       { property: 'og:image:height', content: '630' },
-      { name: 'twitter:title', content: 'Arka Solar Energy | Best Solar EPC Company in Chennai' },
+      { name: 'twitter:title', content: 'Arka Solar Energy | Best Solar Panel Installation in Chennai' },
       {
         name: 'twitter:description',
         content:
-          "Chennai's trusted solar EPC partner. PM Surya Ghar subsidy up to Rs 78,000. Free site assessment.",
+          "Arka Solar Energy provides expert solar panel installation in Chennai. Get PM Surya Ghar subsidy & TANGEDCO support for residential & commercial solar.",
       },
       { name: 'twitter:image', content: `${BASE_URL}/og-home.jpg` },
     ],
     links: [{ rel: 'canonical', href: `${BASE_URL}/` }],
-    jsonLd: [homeSchema],
+    jsonLd: [homeSchema, organizationSchema, websiteSchema],
   }),
   '/about': buildPage({
-    title: "About Us | Arka Solar Energy — Chennai's Trusted Solar EPC Partner",
+    title: 'About Arka Solar Energy | Solar Experts in Chennai',
     tags: [
       {
         name: 'description',
         content:
-          "Learn about Arka Solar Energy — Chennai's dedicated solar EPC company. Technical expertise, Tier-1 equipment, and a customer-first approach for every residential, commercial and industrial solar project in Tamil Nadu.",
+          "Arka Solar Energy is Chennai's leading solar EPC company. We provide quality solar solutions with expert engineering and dedicated support.",
       },
       {
         name: 'keywords',
@@ -181,50 +218,50 @@ export const SEO_BY_PATH: Record<string, SeoPayload> = {
       { property: 'og:url', content: `${BASE_URL}/about` },
       {
         property: 'og:title',
-        content: "About Us | Arka Solar Energy — Chennai's Trusted Solar EPC Partner",
+        content: 'About Arka Solar Energy | Solar Experts in Chennai',
       },
       {
         property: 'og:description',
         content:
-          "Chennai's dedicated solar EPC company with deep expertise in Tamil Nadu's climate, TANGEDCO regulations, and PM Surya Ghar subsidy processing.",
+          "Arka Solar Energy is Chennai's leading solar EPC company. We provide quality solar solutions with expert engineering and dedicated support.",
       },
       { property: 'og:image', content: `${BASE_URL}/og-about.jpg` },
-      { name: 'twitter:title', content: 'About Us | Arka Solar Energy Chennai' },
+      { name: 'twitter:title', content: 'About Arka Solar Energy | Solar Experts in Chennai' },
       {
         name: 'twitter:description',
         content:
-          "Chennai's dedicated solar EPC company. Tier-1 equipment, end-to-end service, and TANGEDCO expertise.",
+          "Arka Solar Energy is Chennai's leading solar EPC company. We provide quality solar solutions with expert engineering and dedicated support.",
       },
       { name: 'twitter:image', content: `${BASE_URL}/og-about.jpg` },
     ],
     links: [{ rel: 'canonical', href: `${BASE_URL}/about` }],
   }),
   '/services': buildPage({
-    title: 'Solar EPC Services in Chennai | Residential, Commercial and Industrial | Arka Solar Energy',
+    title: 'Solar EPC Services Chennai | Rooftop & Industrial Solar',
     tags: [
       {
         name: 'description',
         content:
-          'Complete solar EPC services in Chennai — residential rooftop solar, apartment complex solar, commercial and industrial plants, PM Surya Ghar subsidy processing, TANGEDCO net metering approvals, and O&M. Get a free quote.',
+          "Explore residential solar installation in Chennai and commercial solar solutions with Arka Solar Energy. Best solar EPC services in Tamil Nadu.",
       },
       {
         name: 'keywords',
         content:
-          'residential solar Chennai, commercial solar Tamil Nadu, industrial solar Chennai, apartment rooftop solar Chennai, TANGEDCO net metering, solar O&M Chennai, solar EPC services Tamil Nadu, PM Surya Ghar subsidy Tamil Nadu, solar panel installation cost Chennai, 3kW solar system Chennai',
+          'residential solar Chennai, commercial solar installation Chennai, rooftop solar installation Chennai, cost of solar panel installation in Chennai, rooftop solar subsidy in Tamil Nadu, 3kw solar system price in Chennai, solar panel price Chennai, solar rooftop subsidy Chennai, home solar system Chennai',
       },
       { property: 'og:url', content: `${BASE_URL}/services` },
-      { property: 'og:title', content: 'Solar EPC Services in Chennai | Arka Solar Energy' },
+      { property: 'og:title', content: 'Solar EPC Services Chennai | Rooftop & Industrial Solar' },
       {
         property: 'og:description',
         content:
-          'End-to-end solar EPC services in Chennai — residential, commercial, industrial, and apartment solar with PM Surya Ghar subsidy and TANGEDCO support.',
+          'Arka Solar Energy provides end-to-end solar EPC services in Chennai, including residential rooftop solar, commercial projects, and TANGEDCO net metering.',
       },
       { property: 'og:image', content: `${BASE_URL}/og-services.jpg` },
-      { name: 'twitter:title', content: 'Solar EPC Services in Chennai | Arka Solar Energy' },
+      { name: 'twitter:title', content: 'Solar EPC Services Chennai | Rooftop & Industrial Solar' },
       {
         name: 'twitter:description',
         content:
-          'Residential, commercial and industrial solar EPC in Chennai. PM Surya Ghar subsidy and TANGEDCO support.',
+          'Arka Solar Energy provides end-to-end solar EPC services in Chennai, including residential rooftop solar, commercial projects, and TANGEDCO net metering.',
       },
       { name: 'twitter:image', content: `${BASE_URL}/og-services.jpg` },
     ],
@@ -232,12 +269,12 @@ export const SEO_BY_PATH: Record<string, SeoPayload> = {
     jsonLd: [servicesSchema],
   }),
   '/gallery': buildPage({
-    title: 'Solar Installation Gallery | Residential and Commercial Projects | Arka Solar Energy Chennai',
+    title: 'Solar Project Gallery | Our Installations in Chennai',
     tags: [
       {
         name: 'description',
         content:
-          "Browse Arka Solar Energy's completed solar installations across Chennai — residential rooftops, apartment complexes, commercial buildings, and industrial plants. Real projects, real results.",
+          "Explore Arka Solar Energy's gallery of successful solar installations across Chennai, featuring residential & commercial rooftop solar projects.",
       },
       {
         name: 'keywords',
@@ -245,29 +282,30 @@ export const SEO_BY_PATH: Record<string, SeoPayload> = {
           'solar installation photos Chennai, rooftop solar gallery, solar panel installation pictures Tamil Nadu, Arka Solar projects, solar installation Chennai portfolio',
       },
       { property: 'og:url', content: `${BASE_URL}/gallery` },
-      { property: 'og:title', content: 'Solar Installation Gallery | Arka Solar Energy Chennai' },
+      { property: 'og:title', content: 'Solar Project Gallery | Our Installations in Chennai' },
       {
         property: 'og:description',
         content:
-          'Real solar installations across Chennai — residential, apartment, commercial and industrial projects by Arka Solar Energy.',
+          "Explore Arka Solar Energy's gallery of successful solar installations across Chennai, featuring residential & commercial rooftop solar projects.",
       },
       { property: 'og:image', content: `${BASE_URL}/og-gallery.jpg` },
-      { name: 'twitter:title', content: 'Solar Installation Gallery | Arka Solar Energy' },
+      { name: 'twitter:title', content: 'Solar Project Gallery | Our Installations in Chennai' },
       {
         name: 'twitter:description',
-        content: 'Real solar projects across Chennai — residential, commercial and industrial.',
+        content:
+          "Explore Arka Solar Energy's gallery of successful solar installations across Chennai, featuring residential, commercial, and industrial rooftop solar projects.",
       },
       { name: 'twitter:image', content: `${BASE_URL}/og-gallery.jpg` },
     ],
     links: [{ rel: 'canonical', href: `${BASE_URL}/gallery` }],
   }),
   '/contact': buildPage({
-    title: 'Contact Us | Get Free Solar Quote in Chennai | Arka Solar Energy',
+    title: 'Contact Us | Free Solar Quote & Site Survey in Chennai',
     tags: [
       {
         name: 'description',
         content:
-          'Contact Arka Solar Energy for a free solar site assessment in Chennai. Call, email, or fill out our form and our solar experts will reach you within 24 hours. Serving all areas of Tamil Nadu.',
+          'Contact Arka Solar Energy for a free solar assessment in Chennai. Get a quote for your rooftop solar system. We respond within 24 hours.',
       },
       {
         name: 'keywords',
@@ -277,18 +315,19 @@ export const SEO_BY_PATH: Record<string, SeoPayload> = {
       { property: 'og:url', content: `${BASE_URL}/contact` },
       {
         property: 'og:title',
-        content: 'Contact Us | Get Free Solar Quote in Chennai | Arka Solar Energy',
+        content: 'Contact Us | Free Solar Quote & Site Survey in Chennai',
       },
       {
         property: 'og:description',
         content:
-          'Get a free solar site assessment in Chennai. Our solar experts respond within 24 hours. Call, email, or fill the form.',
+          'Contact Arka Solar Energy for a free solar assessment in Chennai. Get a quote for your rooftop solar system. We respond within 24 hours.',
       },
       { property: 'og:image', content: `${BASE_URL}/og-contact.jpg` },
-      { name: 'twitter:title', content: 'Contact Arka Solar Energy | Free Solar Quote Chennai' },
+      { name: 'twitter:title', content: 'Contact Us | Free Solar Quote & Site Survey in Chennai' },
       {
         name: 'twitter:description',
-        content: 'Free solar site assessment in Chennai. Our experts respond within 24 hours.',
+        content:
+          'Contact Arka Solar Energy for a free solar site assessment in Chennai. Get a customized quote for your rooftop solar system today. We respond within 24 hours.',
       },
       { name: 'twitter:image', content: `${BASE_URL}/og-contact.jpg` },
     ],

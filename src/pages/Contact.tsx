@@ -59,9 +59,9 @@ export default function Contact() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold">Let's Get You Started on Solar</h1>
+          <h1 className="text-4xl md:text-6xl font-bold">Contact Arka Solar Energy | Free Solar Quote</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Our team is ready to answer all your questions and guide you through the process.
+            Get a free solar site assessment and customized quote for your rooftop solar installation in Chennai.
           </p>
         </div>
       </section>
@@ -203,15 +203,15 @@ export default function Contact() {
                 <h2 className="text-3xl font-bold text-panel-navy">Follow Our Journey</h2>
                 <div className="flex gap-4">
                   {[
-                    { icon: Instagram, href: 'https://www.instagram.com/arkasolar.energy/', label: 'Instagram' },
-                    { icon: Facebook, href: 'https://www.facebook.com/arkasolarenergy.in', label: 'Facebook' }
+                    { icon: Instagram, href: CONTACT_INFO.instagram, label: 'Instagram' },
+                    { icon: Facebook, href: CONTACT_INFO.facebook, label: 'Facebook' }
                   ].map((item, i) => (
                     <a
                       key={i}
                       href={item.href}
                       aria-label={item.label}
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noopener noreferrer"
                       className="w-14 h-14 bg-panel-navy text-white rounded-2xl flex items-center justify-center hover:bg-solar-red transition-all shadow-lg"
                     >
                       <item.icon size={24} />

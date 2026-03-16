@@ -35,9 +35,9 @@ export default function Services() {
         }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold">Our Solar EPC Services</h1>
+          <h1 className="text-4xl md:text-6xl font-bold">Solar EPC Services in Chennai | Residential & Industrial</h1>
           <p className="text-xl text-white/70 max-w-3xl mx-auto">
-            Complete end-to-end solar solutions for homes, businesses, and industries in Chennai.
+            Comprehensive solar energy solutions for homes, businesses, and industrial plants across Chennai and Tamil Nadu.
           </p>
         </div>
       </section>
